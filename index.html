@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Destiny Primary School - Uganda</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f9;
+    }
+    header {
+      background-color: #1e5c2b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #2e7d32;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hidden {
+      display: none;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #1e5c2b;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      background-color: #1e5c2b;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Destiny Primary School</h1>
+    <p>Built On The Rock</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('about')">About</a>
+    <a href="#" onclick="showSection('programs')">Programs</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Destiny Primary School</h2>
+    <p>We are a community-based Primary School located in Wakiso-Mende along Kampala-Hoima, committed to providing quality education to children from all backgrounds.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/School_children_in_Uganda.jpg" alt="Pupils of Destiny Primary School at an assembly" style="width: 100%; max-width: 700px;">
+  </section>
+
+  <section id="about" class="hidden">
+    <h2>About Us</h2>
+    <p>Founded in 2009, Destiny Primary School has grown into a vibrant learning center for pupils. We focus on literacy, numeracy, and holistic child development.</p>
+  </section>
+
+  <section id="programs" class="hidden">
+    <h2>Our Programs</h2>
+    <ul>
+      <li>Early Childhood Education (Nursery)</li>
+      <li>Primary Classes (P1 to P7)</li>
+      <li>Sports and Physical Education</li>
+      <li>Community Service Projects</li>
+      <li>ICT and Digital Learning</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="hidden">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Email: afugarebeccatumusiime@gmail.com | Tel: +256 772466365</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Destiny Primary School - Uganda</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => {
+        if (section.id === id) {
+          section.classList.remove("hidden");
+        } else {
+          section.classList.add("hidden");
+        }
+      });
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been received.");
+      e.target.reset();
+    }
+
+    // Show home on load
+    document.addEventListener("DOMContentLoaded", () => {
+      showSection('home');
+    });
+  </script>
+
+</body>
+</html>
